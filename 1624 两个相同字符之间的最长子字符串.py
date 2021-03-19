@@ -15,3 +15,13 @@ class Solution:
                 temp=b-i-1
                 ans=max(temp,ans)
         return ans
+    
+class Solution:
+    def maxLengthBetweenEqualCharacters(self, s: str) -> int:
+        ans=-1
+        for i in range(len(s)):
+            if i+ans>=len(s):
+                break
+            a=s.rfind(s[i])
+            ans=max(ans,a-i-1)
+        return ans
